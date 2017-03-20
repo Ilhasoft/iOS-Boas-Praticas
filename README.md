@@ -25,3 +25,6 @@ ProjectName
   - Util
   - Views
 
+#### Por que não usar Storyboards?
+
+Na Ilhasoft, optamos por não usar Storyboards pelo motivo de

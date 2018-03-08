@@ -1,10 +1,10 @@
 # Boas Práticas no Desenvolvimento iOS
 
-## Projeto base
+_Assim como software, este documento também deve ser mantido pelos desenvolvedores. Desta forma, poderemos ter a garantia de que ele estará sempre atualizado com as nossas necessidades e costumes diários. Convidamos todos a nos ajudarem nisto - abra uma issue ou mande um pull request._
 
-Esse documento inicialmente tem por base os tópicos abordados em https://github.com/futurice/ios-good-practices, porém adaptado para as práticas utilizadas na Ilhasoft.
+### Motivação
 
-## Iniciando
+Sabemos que pode ser difícil mergulhar de cabeça no mundo iOS. A estrada pode ser longa e tortuosa da construção até o lançamento dos aplicativos na AppStore. Mas não se desespere! Foi por isso que criamos este documento. Ele tem como objetivo ajudar aos iniciantes e servir como guia aos desbravadores que sempre pensam e procuram fazer as coisas da "maneira correta". Tudo que escrevemos aqui são sugestões de boas práticas, mas caso tenha uma boa razão para fazer as coisas de maneira diferente, te encorajamos a seguir em frente!
 
 ### Human Interface Guidelines
 
@@ -28,3 +28,7 @@ ProjectName
 #### Por que não usar Storyboards?
 
 Na Ilhasoft, optamos por não usar Storyboards pelo motivo de
+
+## Referência
+
+Este documento baseia seus tópicos aos abordados em [Good ideas for iOS development by Futurice developers](https://github.com/futurice/ios-good-practices), mas foi traduzido e adaptado para estar de acordo com as práticas utilizadas pelos desenvolvedores da Ilhasoft.

@@ -13,7 +13,7 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
 1. [Getting Started](#getting-started)
   1. [Linguagens de Programação](#programming-languages)
   1. [Human Interface Guidelines](#human-interface-guidelines)
-  1. [Cocoaland Framework](#native-framework)
+  1. [Cocoa Framework](#native-framework)
   1. [Configurando o XCode](#xcode)
 1. [Criando um novo projeto](#project-setup)
   1. [Versão mínima do iOS](#minimu-version-ios)
@@ -22,7 +22,7 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
   1. [Constants](#contants)
   1. [Ignores](#ignores)
 1. [Criando um novo layout](#new-layout)  
-  1. [Por que criar layouts inteiramente em código?](#code-layout)
+  1. [Por que criar layouts inteiramente via código?](#code-layout)
   1. [Por que utilizar XIBs ao invés de Storyboards?](#xib-storyboard)
   1. [Aproveitando o melhor dos dois mundos](#o-melhor-dos-dois-muntos)
 1. [Dependency Management](#dependency-management)
@@ -38,7 +38,7 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
   1. [View-Interactor-Presenter-Entity-Routing (VIPER)](#viper)
   1. [Ilhasoft's own architecture](#ilhasoft-architecture)
 1. [Coding Style](#coding-style)
-  1. [Idioma Sugerido](#idiom)
+  1. [Idioma](#idiom)
   1. [Lint](#lint)
   1. [Documentação](#documentation)
 1. [Stores](#stores)
@@ -71,13 +71,21 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
 
 ## Getting Started
 
+### Linguagens de Programação
+
 ### Human Interface Guidelines
 
 Se você não está acostumado ou vem de outra plataforma, tire um tempo para se familiarizar com o conteúdo do [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/). As guidelines possuem um bom resumo com as nomeclaturas dos componentes de UI nativos, dimensões dos ícones etc.
 
-### Xcode
+### Cocoa Framework
+
+### Configurando o Xcode
 
 Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada pela Apple e possui o melhor o suporte a `Objective-C` e `Swift`.
+
+## Criando um novo projeto
+
+### Versão mínima do iOS
 
 ### Estrutura do Projeto
 
@@ -90,24 +98,80 @@ ProjectName
   - Util
   - Views
 
-#### Por que não usar Storyboards?
+### Localization
+### Constants
+### Ignores
 
-TODO
+## Criando um novo layout
 
-## Libs mais utilizadas
+### Por que criar layouts inteiramente via código?
+
+### Por que utilizar XIBs ao invés de Storyboards?
+
+### Aproveitando o melhor dos dois mundos
+
+## Dependency Management
+
+### Cocoapods
+### Carthage
+### Git Submodule
+### Vendors
+### Criando Libs
+### Libs mais utilizadas
+
 ## Arquitetura de Software
-## Stores
-## Assets
+
+### Model-View-Controller (MVC)
+### Model-View-ViewModel (MVVM)
+### View-Interactor-Presenter-Entity-Routing (VIPER)
+### Ilhasoft's own architecture
+
 ## Coding Style
+
+### Idioma
+### Lint
+### Documentação
+
+## Stores
+
+### RxSwift
+
+## Assets
+## Versionamento
+## Git Flow
 ## Segurança
+
+### Data Storage
+### Logging
+### User Interface
+
 ## Diagnósticos
+
+### Warnings do Compilador
+### Clang Static Analyzer
+### Faux Pas
+### Debugging
+### Profiling
+
 ## Analytics
+
+### Crashlytics
+
 ## Building
+
+### Configurações
+### Targets
+### Schemes
+
 ## Deployment
+
+### Signing
+### Provisioning
+
 ## In-App Purchases (IAP)
-## Referência
-## License
 
 ## Referência
 
 Este documento baseia seus tópicos aos abordados em [Good ideas for iOS development by Futurice developers](https://github.com/futurice/ios-good-practices), mas foi traduzido e adaptado para estar de acordo com as práticas utilizadas pelos desenvolvedores da Ilhasoft.
+
+## License

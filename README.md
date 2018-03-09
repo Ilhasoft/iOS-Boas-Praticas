@@ -12,9 +12,9 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
 
 1. [Getting Started](#getting-started)
     1. Linguagens de Programação
-    1. Human Interface Guidelines
     1. Cocoa Framework
-    1. Configurando o XCode
+    1. Human Interface Guidelines
+    1. IDE
 1. [Criando um novo projeto](#project-setup)
     1. Versão mínima do iOS
     1. Estrutura do Projeto
@@ -73,13 +73,17 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
 
 ### Linguagens de Programação
 
+Utilizamos sempre a versão mais recente do Swift. Recomendamos uma boa lida na [documentação oficial](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309) para entender as particularidades da linguagem. Em alguns casos, algum conhecimento em Objective-C pode vir a ser útil.
+
+### App Framework
+
+Recomendamos a utilização do [Apple Developer  Documentation](https://developer.apple.com/documentation/) sempre que necessário.
+
 ### Human Interface Guidelines
 
 Se você não está acostumado ou vem de outra plataforma, tire um tempo para se familiarizar com o conteúdo do [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/). As guidelines possuem um bom resumo com as nomeclaturas dos componentes de UI nativos, dimensões dos ícones etc.
 
-### Cocoa Framework
-
-### Configurando o Xcode
+### IDE
 
 Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada pela Apple e possui o melhor o suporte a `Objective-C` e `Swift`.
 
@@ -87,16 +91,16 @@ Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada
 
 ### Versão mínima do iOS
 
+É sempre útil que façamos uma avaliação prévia antes de escolher qual a versão mínima do iOS que vamos utilizar quando criarmos um novo aplicativo. Isso porque muitas vezes temos que prestar atenção em funcionalidades que surgem a cada versão e precisamos estar de olho. Regra geral: costumamos criar sempre projetos onde a versão mínima do iOS seja duas versões a menos que a atual.
+
+Use essas ferramentas para colher informações para fazer a melhor escolha:
+
+- [Apple’s world-wide iOS version penetration statistics](https://developer.apple.com/support/app-store/)
+- [DavidSmith: iOS Version Stats](https://david-smith.org/iosversionstats/)
+
 ### Estrutura do Projeto
 
-Em geral, os projetos iOS da Ilhasoft seguem uma estrutura comum de devisão de pastas, no seguinte estilo:
-
-ProjectName
-- Classes
-  - Controllers
-  - Model
-  - Util
-  - Views
+TO DO
 
 ### Localization
 ### Constants

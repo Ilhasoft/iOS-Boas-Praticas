@@ -122,6 +122,8 @@ enum Color {
 
 ### Ignores
 
+Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` decente. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` default para tanto `swift` quanto `Objective-C`.
+
 ## Criando um novo layout
 
 ### Por que criar layouts inteiramente via código?

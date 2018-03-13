@@ -32,20 +32,12 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
     1. Vendors
     1. Criando libs
     1. Libs mais utilizadas
-1. [Arquitetura de Software](#architecture)
-    1. Model-View-Controller (MVC)
-    1. Model-View-ViewModel (MVVM)
-    1. View-Interactor-Presenter-Entity-Routing (VIPER)
-    1. Ilhasoft's own architecture
 1. [Coding Style](#coding-style)
     1. Idioma
     1. Lint
     1. Documentação
 1. [Stores](#stores)
     1. RxSwift
-1. [Assets](#assets)
-1. [Versionamento](#versionamento)  
-1. [Git Flow](#git-flow)  
 1. [Segurança](#security)
     1. Data Storage
     1. Logging
@@ -147,13 +139,6 @@ enum Color {
 ### Criando Libs
 ### Libs mais utilizadas
 
-## Arquitetura de Software
-
-### Model-View-Controller (MVC)
-### Model-View-ViewModel (MVVM)
-### View-Interactor-Presenter-Entity-Routing (VIPER)
-### Ilhasoft's own architecture
-
 ## Coding Style
 
 ### Idioma
@@ -163,10 +148,6 @@ enum Color {
 ## Stores
 
 ### RxSwift
-
-## Assets
-## Versionamento
-## Git Flow
 ## Segurança
 
 ### Data Storage

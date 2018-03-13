@@ -107,6 +107,27 @@ TO DO
 Mantenha todas as strings em arquivos de localization desde o início do projeto. Essa prática não é somente boa para traduções, mas torna mais fácil a busca por textos visíveis ao usuário.
 
 ### Constants
+
+Mantenha o escopo das constantes o menor possível. Por exemplo, caso você precise das constantes somente dentro de uma determinada classe, as constantes devem estar definidias dentro desta classe. Àquelas constantes cujos escopos devem ser globais devem ser mantidas em um só lugar. Em swift, você deve usar enums definidos em um arquivo chamado 'Constants.swift' para agrupar, armazenar e acessar as constantes globais de uma maneira elegante:
+
+```swift
+
+enum Config {
+    static let baseURL = NSURL(string: "http://www.example.org/")!
+    static let splineReticulatorName = "foobar"
+}
+
+enum Color {
+    static let primaryColor = UIColor(red: 0.22, green: 0.58, blue: 0.29, alpha: 1.0)
+    static let secondaryColor = UIColor.lightGray
+
+    // A visual way to define colours within code files is to use #colorLiteral
+    // This syntax will present you with colour picker component right on the code line
+    static let tertiaryColor = #colorLiteral(red: 0.22, green: 0.58, blue: 0.29, alpha: 1.0)
+}
+
+```
+
 ### Ignores
 
 ## Criando um novo layout

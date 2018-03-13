@@ -85,7 +85,7 @@ Se você não está acostumado ou vem de outra plataforma, tire um tempo para se
 
 ### IDE
 
-Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada pela Apple e possui o melhor o suporte a `Objective-C` e `Swift`.
+Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada pela Apple e possui o melhor suporte a `Objective-C` e `Swift`.
 
 ## Criando um novo projeto
 
@@ -103,6 +103,9 @@ Use essas ferramentas para colher informações para fazer a melhor escolha:
 TO DO
 
 ### Localization
+
+Mantenha todas as strings em arquivos de localization desde o início do projeto. Essa prática não é somente boa para traduções, mas torna mais fácil a busca por textos visíveis ao usuário.
+
 ### Constants
 ### Ignores
 

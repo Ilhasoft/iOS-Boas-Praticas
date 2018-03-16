@@ -100,7 +100,7 @@ Mantenha todas as strings em arquivos de localization desde o início do projeto
 
 ### Constants
 
-Mantenha o escopo das constantes o menor possível. Por exemplo, caso você precise das constantes somente dentro de uma determinada classe, as constantes devem estar definidias dentro desta classe. Àquelas constantes cujos escopos devem ser globais devem ser mantidas em um só lugar. Em swift, você deve usar enums definidos em um arquivo chamado 'Constants.swift' para agrupar, armazenar e acessar as constantes globais de uma maneira elegante:
+Mantenha o escopo das constantes o menor possível. Por exemplo, caso você precise das constantes somente dentro de uma determinada classe, as constantes devem estar definidias dentro desta classe. Àquelas constantes cujos escopos devem ser globais devem ser mantidas em um só lugar. Em swift, você deve usar enums definidos em um arquivo chamado `Constants.swift` para agrupar, armazenar e acessar as constantes globais de uma maneira elegante:
 
 ```swift
 
@@ -122,7 +122,7 @@ enum Color {
 
 ### Ignores
 
-Um bom passo a ser tomado quando colocamos um projeto em um controle de verssão é usarmos um `.gitignore` decente. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` por default para tanto `swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
+Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` apropriado. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` por default para tanto `swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
 
 ## Criando um novo layout
 
@@ -166,7 +166,7 @@ Este comando incluirá as bibliotecas como parte do workspace de seu projeto. Ge
 Perceba:
 
 - A partir de agora você terá que utilizar o arquivo `.xcworkspace` ao invés de `.xcproject` ou seu projeto não compilará.
-- O comando `pod update` atualizará todos as dependências em suas últimas versões permitidas pelo `Podfile`. Você pode usar alguns [operadores](http://guides.cocoapods.org/syntax/podfile.html#pod) para especificar qual versão utilizar.
+- O comando `pod update` atualizará todos as dependências em suas últimas versões permitidas pelo `Podfile`. Você pode usar alguns [operadores](http://guides.cocoapods.org/syntax/podfile.html#pod) para especificar quais versões das bibliotecas seu projeto deverá utilizar.
 
 ### Carthage
 
@@ -177,7 +177,6 @@ No Carthage não há repositório centralizado para as biblioteca e isto signifi
 Para iniciar, siga a [instruções na documentação oficial](https://github.com/Carthage/Carthage#installing-carthage) do Carthage.
 
 ### Vendors
-### Criando Libs
 ### Libs mais utilizadas
 
 ## Coding Style

@@ -209,7 +209,6 @@ Veja que o SignalProducer é somente uma forma de receber uma lista de gigs. Som
 
 :warning: Se você não deseja utilizar `signals`, `futures` ou mecanismos similares para representar seus dados futuros, você pode sempre utilizar blocos de `callback`. Mas tenha em mente que o encadeamento ou aninhamento destes blocos pode rapidamente se torna difícil de manter - condição a qual chamamos de [`callback hell`](http://callbackhell.com/). :warning:
 
-
 ## Segurança
 
 ### Data Storage
@@ -243,6 +242,8 @@ Veja que o SignalProducer é somente uma forma de receber uma lista de gigs. Som
 
 ## Referência
 
-Este documento baseia seus tópicos aos abordados em [Good ideas for iOS development by Futurice developers](https://github.com/futurice/ios-good-practices), mas foi traduzido e adaptado para estar de acordo com as práticas utilizadas pelos desenvolvedores da Ilhasoft.
+Este documento baseia seus tópicos aos abordados em [Good ideas for iOS development by Futurice developers](https://github.com/futurice/ios-good-practices), mas foi traduzido e adaptado para estar de acordo com as práticas utilizadas pelos desenvolvedores da [Ilhasoft](https://www.google.com.br/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwjv1raw3vHZAhWHQpAKHRU7CLEQFggpMAA&url=http%3A%2F%2Filhasoft.com.br%2F&usg=AOvVaw3yklQnYJro06a14t-tC3lF).
 
 ## License
+
+[Futurice](https://futurice.com/) • Creative Commons Attribution 4.0 International (CC BY 4.0)

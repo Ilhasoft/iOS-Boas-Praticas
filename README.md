@@ -170,7 +170,7 @@ Caso o componente de terceiro que você deseja incluir no projeto não esteja di
 
 ### Idioma
 
-Preferimos sempre utilizar a lingua inglesa em ao criarmos nossos projetos.
+Preferimos sempre utilizar o idioma __inglês__ em ao criarmos nossos projetos.
 
 ### Lint
 
@@ -183,7 +183,7 @@ Recomendamos também uma boa lida nas [Code Conventions de Ray Wenderlich](https
 
 ### Documentação
 
-Pregamos o __bom senso__ com relação a documentação de código. Procuramos prevenir a necessidade de documentações extensas ao criarmos códigos legíveis. Caso haja a necessidade de explicar alguma decisão tomada, fique à vontade. Pense sempre que seus amigos ficarão mais felizes por não precisarem perder tempo tentando entender o código que foi feito por você.
+Pregamos o bom senso com relação a documentação de código. Procuramos prevenir a necessidade de documentações extensas ao criarmos códigos legíveis. Caso haja a necessidade de explicar alguma decisão tomada, fique à vontade. Pense sempre que seus amigos ficarão mais felizes por não precisarem perder tempo tentando entender o código que foi feito por você.
 
 Consideramos que o autores do [NSHipster](http://nshipster.com/swift-documentation/) fizeram um bom trabalho ao definir como formatar a documentação. Recomendamos uma lida no material deles sempre que necessário. :wink:
 

@@ -122,21 +122,31 @@ enum Color {
 
 ### Ignores
 
-Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` decente. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` default para tanto `swift` quanto `Objective-C`.
+Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` decente. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` por default para tanto `swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
 
 ## Criando um novo layout
 
 ### Por que criar layouts inteiramente via código?
 
+* Os storyboards são mais propensos a gerarem conflitos devido a estrutura complexa do seu XML. Isto faz com que os merges sejam mais difíceis do que se criássemos a view totalmente via código.
+* É mais fácil estruturar e reusar views que sejam feitas via código, mantendo assim o seu código DRY (Don't Repeat Yourselft).
+* Toda informação está em um só lugar. No Interface Builder você deve buscar em todos os inspectors afim de achar o que você estiver procurando.
+* Os storyboard introduzem uma certa acoplação entre seu código e a UI que pode levar a crashes. Por exemplo: quando um outlet ou ação não é configurada corretamente. Estes erros não são detectados pelo compilador.
+
 ### Por que utilizar XIBs ao invés de Storyboards?
 
+* Como a estrutura do XML dos XIBs é menos complexa do que a estrutura XML de storyboards, a possibilidade de que hajam conflitos de merge é diminuída.
+* A possibilidade de criar o XIB de componentes independentes, aumentando a reusabilidade, o que por consequência mantém o código DRY.
+* A possibilidade de pré-visualizar os componentes e ter uma visão mais próxima de como a view irá se comportar em um dispositivo.
+
 ### Aproveitando o melhor dos dois mundos
+
+Você também pode utilizar o modo híbrido: comece criando um rascunho da tela no XIB, isso faz com que pequenas mudanças de layout se tornem mais fáceis e rápidas. Neste processo, você também pode chamar os designers para participarem da criação. Assim que o UI amadurecer, você pode alternar pra uma abordagem mais voltada ao código afim de introduzir a lógica do negócio.
 
 ## Dependency Management
 
 ### Cocoapods
 ### Carthage
-### Git Submodule
 ### Vendors
 ### Criando Libs
 ### Libs mais utilizadas

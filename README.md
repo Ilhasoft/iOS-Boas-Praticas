@@ -177,7 +177,30 @@ No Carthage não há repositório centralizado para as biblioteca e isto signifi
 Para iniciar, siga a [instruções na documentação oficial](https://github.com/Carthage/Carthage#installing-carthage) do Carthage.
 
 ### Vendors
+
+Caso o componente de terceiro que você deseja incluir no projeto não esteja disponível no `Cocoapods` e nem no `Carthage`, te aconselhamos a adicioná-lo ao código base do projeto em um diretório chamado `Vendors`.
+
+:warning: IMPORTANTE :warning:
+
+- Lembre de verificar a disponibilidade e adicionar (caso haja) a licensa de software aos componentes de terceiros presentes em seu projeto, dando os devidos créditos ao autor e incluindo uma `url` como fonte para fácil identificação.
+- Como não existirá um `Dependency Manager` vinculado ao componente, esteja atento, pois será responsabilidade da sua equipe manter esta parte de código. Aconselhamos a não incluir algo que não consigamos compreender.
+- SUGESTÃO: Caso seja feita alguma mudança/melhoria ao código, lembre-se de compartilhá-la junto ao projeto de origem. Apreciamos a contribuição em projetos `open-source`.
+
 ### Libs mais utilizadas
+
+- [Alamofire](https://github.com/Alamofire/Alamofire)
+- [Object Mapper](https://github.com/Hearst-DD/ObjectMapper)
+- [TPKeyboardAvoiding](https://github.com/michaeltyson/TPKeyboardAvoiding)
+- [ISOnDemandTableView](https://github.com/Ilhasoft/ISOnDemandTableView)
+- [SwipeCellKit](https://github.com/SwipeCellKit/SwipeCellKit)
+- [Spring](https://github.com/MengTo/Spring)
+- [Parse SDK](https://github.com/parse-community/Parse-SDK-iOS-OSX)
+- [Firebase SDK](https://github.com/firebase/firebase-ios-sdk)
+- [Realm](https://github.com/realm/realm-cocoa)
+- [SDWebImage](https://github.com/rs/SDWebImage)
+- [KingFisher](https://github.com/onevcat/Kingfisher)
+- [RxSwift](https://github.com/ReactiveX/RxSwift)
+- [GrowingTextView](https://github.com/KennethTsang/GrowingTextView)
 
 ## Coding Style
 

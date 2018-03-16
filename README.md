@@ -11,52 +11,16 @@ Sabemos que pode ser difícil mergulhar de cabeça no mundo iOS. A estrada pode 
 Se estiver procurando por algo específico, pode ir diretamente à seção.
 
 1. [Getting Started](#getting-started)
-    1. Linguagens de Programação
-    1. Cocoa Framework
-    1. Human Interface Guidelines
-    1. IDE
 1. [Criando um novo projeto](#project-setup)
-    1. Versão mínima do iOS
-    1. Estrutura do Projeto
-    1. Localization
-    1. Constants
-    1. Gitignore
 1. [Criando um novo layout](#new-layout)  
-    1. Por que criar layouts inteiramente via código?
-    1. Por que utilizar XIBs ao invés de Storyboards?
-    1. Aproveitando o melhor dos dois mundos
 1. [Dependency Management](#dependency-management)
-    1. Cocoapods
-    1. Carthage
-    1. Git Submodule
-    1. Vendors
-    1. Criando libs
-    1. Libs mais utilizadas
 1. [Coding Style](#coding-style)
-    1. Idioma
-    1. Lint
-    1. Documentação
 1. [Stores](#stores)
-    1. RxSwift
 1. [Segurança](#security)
-    1. Data Storage
-    1. Logging
-    1. User Interface
 1. [Diagnósticos](#diagnostics)
-    1. Warnings do compilador
-    1. Clang Static Analyzer
-    1. Faux Pas
-    1. Debugging
-    1. Profiling
 1. [Analytics](#analytics)
-    1. Crashlytics
 1. [Building](#building)
-    1. Configurações
-    1. Targets
-    1. Schemes
 1. [Deployment](#deployment)
-    1. Signing
-    1. Provisioning
 1. [In-App Purchases (IAP)](#in-app-purchases-iap)
 1. [Referência](#reference)
 1. [License](#license)
@@ -184,7 +148,7 @@ Caso o componente de terceiro que você deseja incluir no projeto não esteja di
 
 - Lembre de verificar a disponibilidade e adicionar (caso haja) a licensa de software aos componentes de terceiros presentes em seu projeto, dando os devidos créditos ao autor e incluindo uma `url` como fonte para fácil identificação.
 - Como não existirá um `Dependency Manager` vinculado ao componente, esteja atento, pois será responsabilidade da sua equipe manter esta parte de código. Aconselhamos a não incluir algo que não consigamos compreender.
-- SUGESTÃO: Caso seja feita alguma mudança/melhoria ao código, lembre-se de compartilhá-la junto ao projeto de origem. Apreciamos a contribuição em projetos `open-source`.
+- __SUGESTÃO__: Caso seja feita alguma mudança/melhoria ao código, lembre-se de compartilhá-la junto ao projeto de origem. Apreciamos a contribuição em projetos `open-source`.
 
 ### Libs mais utilizadas
 
@@ -205,8 +169,23 @@ Caso o componente de terceiro que você deseja incluir no projeto não esteja di
 ## Coding Style
 
 ### Idioma
+
+Preferimos sempre utilizar a lingua inglesa em ao criarmos nossos projetos.
+
 ### Lint
+
+Procuramos seguir sempre boas convenções de código. Para tanto, utilizamos o [SwiftLint](https://github.com/realm/SwiftLint) como ferramenta a nos auxiliar nesta missão. O `SwiftLint` age como um agente inspecionando o nosso código em busca de `bad smells` e nos alertando com warnings providenciais mostrando que algo não está tão legal assim.
+
+
+Para instalar o `SwiftLint`, siga as instruções em sua [documentação](https://github.com/realm/SwiftLint#installation).
+
+Recomendamos também uma boa lida nas [Code Conventions de Ray Wenderlich](https://github.com/raywenderlich/swift-style-guide).
+
 ### Documentação
+
+Pregamos o __bom senso__ com relação a documentação de código. Procuramos prevenir a necessidade de documentações extensas ao criarmos códigos legíveis. Caso haja a necessidade de explicar alguma decisão tomada, fique à vontade. Pense sempre que seus amigos ficarão mais felizes por não precisarem perder tempo tentando entender o código que foi feito por você.
+
+Consideramos que o autores do [NSHipster](http://nshipster.com/swift-documentation/) fizeram um bom trabalho ao definir como formatar a documentação. Recomendamos uma lida no material deles sempre que necessário. :wink:
 
 ## Stores
 

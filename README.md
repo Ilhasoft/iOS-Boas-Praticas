@@ -233,7 +233,7 @@ Tome um cuidade extra ao configurar apropriadamente níveis de log antes de lan�
 
 Quando estiver usando um `UITextField` para inserção de senha, lembre de configurar sua propriedade `secureTextEntry` para `true` para evitar que a senha esteja visível. Você também deve disabilitar o corretor automático e limpar o campo sempre que apropriado, como quando seu app entra em background.
 
-Quando isto acontecer, é uma boa prática limpar o `Pastboard` para evitar que o password seja descoberto de alguma maneira. Como o iOS tira screenshots para dispôr no `App Switcher`, esteja seguro de limpar qualquer dado sensitivo no UI _antes_ de retornar do `applicationDidEnterBackground`. 
+Quando isto acontecer, é uma boa prática limpar o `Pastboard` para evitar que o password seja descoberto de alguma maneira. Como o iOS tira screenshots para dispôr no `App Switcher`, esteja seguro de limpar qualquer dado sensitivo no UI _antes_ de retornar do `applicationDidEnterBackground`.
 
 ## Diagnósticos
 
@@ -259,6 +259,18 @@ Quando isto acontecer, é uma boa prática limpar o `Pastboard` para evitar que 
 #### Provisioning
 
 ## In-App Purchases (IAP)
+
+Quando validar recibos de compras dentro do aplicativo, lembre de garantir os seguintes itens:
+
+- Autenticidade: O recibo vem da Apple.
+- Integridade: O recibo não foi adulterado.
+- O app coincide: A identificação do pacote do app no recibo coincide com o identificador do pacote da aplicação.
+- O produto coincide: A ID do produto no recibo corresponda ao seu identificador de produto esperado.
+- Novo recibo: Você não recebeu o mesmo ID de recibo antes.
+
+Sempre que possível, configure seu `IAP (In-App Purchase)` de forma a guardar o conteúdo para venda no lado do servidor e somente entregue ao seu cliente em troca de um recibo válido onde todos os itens abaixos tenham sido verificados. Este tipo de configuração frustra mecanismos de pirataria comuns e - já que a validação é feita no lado do servidor - permite que você use o serviço de validação HTTP de recibos da Apple ao invés de fazê-lo a mão.
+
+Para mais informações a respeito deste tópico, leia a seguinte matéria: [Futurice blog: Validating in-app purchases in your iOS app](https://futurice.com/blog/validating-in-app-purchases-in-your-ios-app).
 
 ## Referência
 

@@ -122,30 +122,52 @@ enum Color {
 
 ### Ignores
 
-Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` decente. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` por default para tanto `swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
+Um bom passo a ser tomado quando colocamos um projeto em um controle de verssão é usarmos um `.gitignore` decente. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` por default para tanto `swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
 
 ## Criando um novo layout
 
 ### Por que criar layouts inteiramente via código?
 
 * Os storyboards são mais propensos a gerarem conflitos devido a estrutura complexa do seu XML. Isto faz com que os merges sejam mais difíceis do que se criássemos a view totalmente via código.
-* É mais fácil estruturar e reusar views que sejam feitas via código, mantendo assim o seu código DRY (Don't Repeat Yourselft).
+* É mais fácil estruturar e reusar views que sejam feitas via código, mantendo assim o seu código DRY (Don't Repeat Yourself).
 * Toda informação está em um só lugar. No Interface Builder você deve buscar em todos os inspectors afim de achar o que você estiver procurando.
-* Os storyboard introduzem uma certa acoplação entre seu código e a UI que pode levar a crashes. Por exemplo: quando um outlet ou ação não é configurada corretamente. Estes erros não são detectados pelo compilador.
+* Os storyboard introduzem uma certa acoplação entre seu código e a UI que pode levar a diversos erros. Por exemplo: quando um IBOutlet ou IBAction não é configurada corretamente. Estes erros não são detectados pelo compilador.
 
 ### Por que utilizar XIBs ao invés de Storyboards?
 
 * Como a estrutura do XML dos XIBs é menos complexa do que a estrutura XML de storyboards, a possibilidade de que hajam conflitos de merge é diminuída.
-* A possibilidade de criar o XIB de componentes independentes, aumentando a reusabilidade, o que por consequência mantém o código DRY.
-* A possibilidade de pré-visualizar os componentes e ter uma visão mais próxima de como a view irá se comportar em um dispositivo.
+* A possibilidade de criar o XIB de componentes independentes aumenta a reusabilidade, o que por consequência mantém o princípio DRY.
+* A possibilidade de pré-visualizar os componentes e ter uma visão mais próxima de como ele irá se comportar em um dispositivo.
 
 ### Aproveitando o melhor dos dois mundos
 
-Você também pode utilizar o modo híbrido: comece criando um rascunho da tela no XIB, isso faz com que pequenas mudanças de layout se tornem mais fáceis e rápidas. Neste processo, você também pode chamar os designers para participarem da criação. Assim que o UI amadurecer, você pode alternar pra uma abordagem mais voltada ao código afim de introduzir a lógica do negócio.
+Você também pode utilizar o modo híbrido: comece criando um rascunho da tela no XIB, isso faz com que pequenas mudanças de layout se tornem mais fáceis e rápidas. Neste processo, você também pode chamar os designers para participarem da criação. Assim que o UI amadurecer, você pode alternar para uma abordagem mais voltada ao código afim de introduzir a lógica do negócio.
 
 ## Dependency Management
 
+Aqui temos algumas possíveis ferramentas caso você esteja planejando incluir bibliotecas de terceiros em seu projeto. Elas estão ordenadas de acordo com a prioridade de uso em nossos projetos. Geralmente seguimos a seguinte prioridade: `Cocoapods` > `Carthage` > `Vendors`.
+
 ### Cocoapods
+
+Devido a sua simplicidade, o [Cocoapods](https://cocoapods.org/) oferece uma integração bastante fácil e rápida. Instale-o com o seguinte comando:
+
+    sudo gem install cocoapods
+
+Para iniciar, acesse o diretório de seu projeto via terminal e digite:
+
+    pod init
+
+Este comando criará o arquivo `Podfile` que será responsável por agrupar todas as bibliotecas que serão utilizadas no projeto em um só lugar. Depois que você adicionar as bibliotecas no `Podfile`, execute no terminal o seguinte comando:
+
+    pod install
+
+Este comando incluirá as bibliotecas como parte do workspace de seu projeto. Geralmente é recomendado [dar commit nas dependências instaladas do seu repositório](https://www.dzombak.com/blog/2014/03/including-pods-in-source-control.html) ao invés de que cada desenvolvedor execute `pod install` depois de um novo `checkout`.
+
+Perceba:
+
+- A partir de agora você terá que utilizar o arquivo `.xcworkspace` ao invés de `.xcproject` ou seu projeto não compilará.
+- O comando `pod update` atualizará todos as dependências em suas últimas versões permitidas pelo `Podfile`. Você pode usar alguns [operadores](http://guides.cocoapods.org/syntax/podfile.html#pod) para especificar qual versão utilizar.
+
 ### Carthage
 ### Vendors
 ### Criando Libs

@@ -27,25 +27,25 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
 
 ## Getting Started
 
-### Linguagens de Programação
+#### Linguagens de Programação
 
 Utilizamos sempre a versão mais recente do Swift. Recomendamos uma boa lida na [documentação oficial](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309) para entender as particularidades da linguagem. Em alguns casos, algum conhecimento em Objective-C pode vir a ser útil.
 
-### App Framework
+#### App Framework
 
 Recomendamos a utilização do [Apple Developer  Documentation](https://developer.apple.com/documentation/) sempre que necessário.
 
-### Human Interface Guidelines
+#### Human Interface Guidelines
 
 Se você não está acostumado ou vem de outra plataforma, tire um tempo para se familiarizar com o conteúdo do [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/). As guidelines possuem um bom resumo com as nomeclaturas dos componentes de UI nativos, dimensões dos ícones etc.
 
-### IDE
+#### IDE
 
 Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada pela Apple e possui o melhor suporte a `Objective-C` e `Swift`.
 
 ## Criando um novo projeto
 
-### Versão mínima do iOS
+#### Versão mínima do iOS
 
 É sempre útil que façamos uma avaliação prévia antes de escolher qual a versão mínima do iOS que vamos utilizar quando criarmos um novo aplicativo. Isso porque muitas vezes temos que prestar atenção em funcionalidades que surgem a cada versão e precisamos estar de olho. Regra geral: costumamos criar sempre projetos onde a versão mínima do iOS seja duas versões a menos que a atual.
 
@@ -54,15 +54,15 @@ Use essas ferramentas para colher informações para fazer a melhor escolha:
 - [Apple’s world-wide iOS version penetration statistics](https://developer.apple.com/support/app-store/)
 - [DavidSmith: iOS Version Stats](https://david-smith.org/iosversionstats/)
 
-### Estrutura do Projeto
+#### Estrutura do Projeto
 
 TO DO
 
-### Localization
+#### Localization
 
 Mantenha todas as strings em arquivos de localization desde o início do projeto. Essa prática não é somente boa para traduções, mas torna mais fácil a busca por textos visíveis ao usuário.
 
-### Constants
+#### Constants
 
 Mantenha o escopo das constantes o menor possível. Por exemplo, caso você precise das constantes somente dentro de uma determinada classe, as constantes devem estar definidias dentro desta classe. Àquelas constantes cujos escopos devem ser globais devem ser mantidas em um só lugar. Em swift, você deve usar enums definidos em um arquivo chamado `Constants.swift` para agrupar, armazenar e acessar as constantes globais de uma maneira elegante:
 
@@ -84,26 +84,26 @@ enum Color {
 
 ```
 
-### Ignores
+#### Ignores
 
 Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` apropriado. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` por default para tanto `swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
 
 ## Criando um novo layout
 
-### Por que criar layouts inteiramente via código?
+##### Por que criar layouts inteiramente via código?
 
 * Os storyboards são mais propensos a gerarem conflitos devido a estrutura complexa do seu XML. Isto faz com que os merges sejam mais difíceis do que se criássemos a view totalmente via código.
 * É mais fácil estruturar e reusar views que sejam feitas via código, mantendo assim o seu código DRY (Don't Repeat Yourself).
 * Toda informação está em um só lugar. No Interface Builder você deve buscar em todos os inspectors afim de achar o que você estiver procurando.
 * Os storyboard introduzem uma certa acoplação entre seu código e a UI que pode levar a diversos erros. Por exemplo: quando um IBOutlet ou IBAction não é configurada corretamente. Estes erros não são detectados pelo compilador.
 
-### Por que utilizar XIBs ao invés de Storyboards?
+##### Por que utilizar XIBs ao invés de Storyboards?
 
 * Como a estrutura do XML dos XIBs é menos complexa do que a estrutura XML de storyboards, a possibilidade de que hajam conflitos de merge é diminuída.
 * A possibilidade de criar o XIB de componentes independentes aumenta a reusabilidade, o que por consequência mantém o princípio DRY.
 * A possibilidade de pré-visualizar os componentes e ter uma visão mais próxima de como ele irá se comportar em um dispositivo.
 
-### Aproveitando o melhor dos dois mundos
+##### Aproveitando o melhor dos dois mundos
 
 Você também pode utilizar o modo híbrido: comece criando um rascunho da tela no XIB, isso faz com que pequenas mudanças de layout se tornem mais fáceis e rápidas. Neste processo, você também pode chamar os designers para participarem da criação. Assim que o UI amadurecer, você pode alternar para uma abordagem mais voltada ao código afim de introduzir a lógica do negócio.
 
@@ -111,7 +111,7 @@ Você também pode utilizar o modo híbrido: comece criando um rascunho da tela 
 
 Aqui temos algumas possíveis ferramentas caso você esteja planejando incluir bibliotecas de terceiros em seu projeto. Elas estão ordenadas de acordo com a prioridade de uso em nossos projetos. Geralmente seguimos a seguinte prioridade: `Cocoapods` > `Carthage` > `Vendors`.
 
-### Cocoapods
+#### Cocoapods
 
 Devido a sua simplicidade, o [Cocoapods](https://cocoapods.org/) oferece uma integração bastante fácil e rápida. Instale-o com o seguinte comando:
 
@@ -132,7 +132,7 @@ Perceba:
 - A partir de agora você terá que utilizar o arquivo `.xcworkspace` ao invés de `.xcproject` ou seu projeto não compilará.
 - O comando `pod update` atualizará todos as dependências em suas últimas versões permitidas pelo `Podfile`. Você pode usar alguns [operadores](http://guides.cocoapods.org/syntax/podfile.html#pod) para especificar quais versões das bibliotecas seu projeto deverá utilizar.
 
-### Carthage
+#### Carthage
 
 Vemos no [Carthage](https://github.com/Carthage/Carthage) como a segunda melhor alternativa ao se adicionar bibliotecas de terceiros em seu projeto. Sua abordagem consiste em compilar as dependências em arquivos de framework e não os adiciona "magicamente" ao projeto. Isto reduz significamente o tempo de compilação do projeto, visto que as bibliotecas já estão compiladas a priori.
 
@@ -140,7 +140,7 @@ No Carthage não há repositório centralizado para as biblioteca e isto signifi
 
 Para iniciar, siga a [instruções na documentação oficial](https://github.com/Carthage/Carthage#installing-carthage) do Carthage.
 
-### Vendors
+#### Vendors
 
 Caso o componente de terceiro que você deseja incluir no projeto não esteja disponível no `Cocoapods` e nem no `Carthage`, te aconselhamos a adicioná-lo ao código base do projeto em um diretório chamado `Vendors`.
 
@@ -150,7 +150,7 @@ Caso o componente de terceiro que você deseja incluir no projeto não esteja di
 - Como não existirá um `Dependency Manager` vinculado ao componente, esteja atento, pois será responsabilidade da sua equipe manter esta parte de código. Aconselhamos a não incluir algo que não consigamos compreender.
 - __SUGESTÃO__: Caso seja feita alguma mudança/melhoria ao código, lembre-se de compartilhá-la junto ao projeto de origem. Apreciamos a contribuição em projetos `open-source`.
 
-### Libs mais utilizadas
+#### Libs mais utilizadas
 
 - [Alamofire](https://github.com/Alamofire/Alamofire)
 - [Object Mapper](https://github.com/Hearst-DD/ObjectMapper)
@@ -168,11 +168,11 @@ Caso o componente de terceiro que você deseja incluir no projeto não esteja di
 
 ## Coding Style
 
-### Idioma
+#### Idioma
 
 Preferimos sempre utilizar o idioma __inglês__ em ao criarmos nossos projetos.
 
-### Lint
+#### Lint
 
 Procuramos seguir sempre boas convenções de código. Para tanto, utilizamos o [SwiftLint](https://github.com/realm/SwiftLint) como ferramenta a nos auxiliar nesta missão. O `SwiftLint` age como um agente inspecionando o nosso código em busca de `bad smells` e nos alertando com warnings providenciais mostrando que algo não está tão legal assim.
 
@@ -181,7 +181,7 @@ Para instalar o `SwiftLint`, siga as instruções em sua [documentação](https:
 
 Recomendamos também uma boa lida nas [Code Conventions de Ray Wenderlich](https://github.com/raywenderlich/swift-style-guide).
 
-### Documentação
+#### Documentação
 
 Pregamos o bom senso com relação a documentação de código. Procuramos prevenir a necessidade de documentações extensas ao criarmos códigos legíveis. Caso haja a necessidade de explicar alguma decisão tomada, fique à vontade. Pense sempre que seus amigos ficarão mais felizes por não precisarem perder tempo tentando entender o código que foi feito por você.
 
@@ -189,7 +189,7 @@ Consideramos que o autores do [NSHipster](http://nshipster.com/swift-documentati
 
 ## Stores
 
-### ReactiveCocoa
+#### ReactiveCocoa
 
 Na camada mais baixa de todo aplicativo geralmente os modelos estão sendo mantidos de alguma maneira, seja em disco, em um banco de dados local ou em um servidor remoto. Esta camada também é útil para abstrair atividades relacionadas com a disposição de objetos do modelo, como o caching.
 
@@ -211,32 +211,52 @@ Veja que o SignalProducer é somente uma forma de receber uma lista de gigs. Som
 
 ## Segurança
 
-### Data Storage
-### Logging
-### User Interface
+Mesmo em tempos onde confiamos nossos dados mais particulares aos nossos dispositivos portáteis, a segurança nos aplicativos continua sendo algo frequentemente negligenciado. Tente achar um bom trade-off dada a natureza de seus dados seguindo somente algumas regras que listaremos a seguir. Um bom material para iniciar é a [iOS Security Guide criada pela própria Apple](https://www.apple.com/business/docs/iOS_Security_Guide.pdf).
+
+#### Data Storage
+
+Caso seu aplicativo precise manter no dispositivo dados sensitivos, como nome de usuário e senha, auth token ou dados pessoais do usuário, você precisa mantê-los em um local que não possa ser acessado de fora do app. Nunca use `UserDefaults`, outros arquivos `plist` no disco ou `Core Data` para este fim porque estes não podem ser encriptados! Na maioria dos casos, o `iOS Keychain` será seu melhor amigo.
+
+Enquanto estiver mantendo arquivos e/ou senhas, esteja seguro de determinar o nível de proteção correto (escolha-o conservadoramente). Se você precisa ter acesso enquanto o dispositivo estiver bloqueado, use `accessible after first unlock`. Em outros casos, você geralmente deve só liberar o acesso quando o dispositivo tenha sido desbloqueado.
+
+:warning: Só mantenha dados sensitivos quando realmente necessário! :warning:
+
+#### Networking
+
+Mantenha encriptado com TLS todo o tráfego HTTP do aplicativo ao servidor remoto. Para evitar ataques `man-in-the-middle` que interceptem seus dados encriptados, você pode configurar um [pinning certificate](https://possiblemobile.com/2013/03/ssl-pinning-for-increased-app-security/). Bibliotecas populares como [AFNetworking](https://github.com/AFNetworking/AFNetworking) ou [Alamofire](https://github.com/Alamofire/Alamofire) já o suportam `out-of-box`.
+
+#### Logging
+
+Tome um cuidade extra ao configurar apropriadamente níveis de log antes de lançar seu app. Builds em produção não devem nunca dar log em senhas, tokens de API ou similares, porque são dados sensitivos e podem vazar ao público facilmente. Por outro lado, dar log no controle de fluxo pode ajudar a descobrir problemas que seus usuários estão experenciando.
+
+#### User Interface
+
+Quando estiver usando um `UITextField` para inserção de senha, lembre de configurar sua propriedade `secureTextEntry` para `true` para evitar que a senha esteja visível. Você também deve disabilitar o corretor automático e limpar o campo sempre que apropriado, como quando seu app entra em background.
+
+Quando isto acontecer, é uma boa prática limpar o `Pastboard` para evitar que o password seja descoberto de alguma maneira. Como o iOS tira screenshots para dispôr no `App Switcher`, esteja seguro de limpar qualquer dado sensitivo no UI _antes_ de retornar do `applicationDidEnterBackground`. 
 
 ## Diagnósticos
 
-### Warnings do Compilador
-### Clang Static Analyzer
-### Faux Pas
-### Debugging
-### Profiling
+#### Warnings do Compilador
+#### Clang Static Analyzer
+#### Faux Pas
+#### Debugging
+#### Profiling
 
 ## Analytics
 
-### Crashlytics
+#### Crashlytics
 
 ## Building
 
-### Configurações
-### Targets
-### Schemes
+#### Configurações
+#### Targets
+#### Schemes
 
 ## Deployment
 
-### Signing
-### Provisioning
+#### Signing
+#### Provisioning
 
 ## In-App Purchases (IAP)
 

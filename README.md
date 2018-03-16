@@ -189,7 +189,27 @@ Consideramos que o autores do [NSHipster](http://nshipster.com/swift-documentati
 
 ## Stores
 
-### RxSwift
+### ReactiveCocoa
+
+Na camada mais baixa de todo aplicativo geralmente os modelos estão sendo mantidos de alguma maneira, seja em disco, em um banco de dados local ou em um servidor remoto. Esta camada também é útil para abstrair atividades relacionadas com a disposição de objetos do modelo, como o caching.
+
+Geralmente quando desejamos lançar uma requisição ao backend ou deserializar um grande arquivo em disco, fazemos isto de maneira assíncrona. Sua API deve refletir este requisito, caso contrário a execução de seu app seria interrompida enquanto não houvesse resposta das requisições a API.
+
+Se você está usando [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa), `SignalProducer` é uma escolha natural de tipo de retorno. Por exemplo, se quiséssemos requisitar as gigs de um artista, faríamos como o seguinte código em Swift e ReactiveSwift:
+
+```swift
+
+func fetchGigs(for artist: Artist) -> SignalProducer<[Gig], Error> {
+    // ...
+}
+
+```
+
+Veja que o SignalProducer é somente uma forma de receber uma lista de gigs. Somente quando iniciado pelo `subscriber` ele irá realmente fazer a requisição dos gigs. Dar `unsubscribe` antes que os dados tenham sido recebidos cancelará a requisição.
+
+:warning: Se você não deseja utilizar `signals`, `futures` ou mecanismos similares para representar seus dados futuros, você pode sempre utilizar blocos de `callback`. Mas tenha em mente que o encadeamento ou aninhamento destes blocos pode rapidamente se torna difícil de manter - condição a qual chamamos de [`callback hell`](http://callbackhell.com/). :warning:
+
+
 ## Segurança
 
 ### Data Storage

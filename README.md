@@ -169,6 +169,13 @@ Perceba:
 - O comando `pod update` atualizará todos as dependências em suas últimas versões permitidas pelo `Podfile`. Você pode usar alguns [operadores](http://guides.cocoapods.org/syntax/podfile.html#pod) para especificar qual versão utilizar.
 
 ### Carthage
+
+Vemos no [Carthage](https://github.com/Carthage/Carthage) como a segunda melhor alternativa ao se adicionar bibliotecas de terceiros em seu projeto. Sua abordagem consiste em compilar as dependências em arquivos de framework e não os adiciona "magicamente" ao projeto. Isto reduz significamente o tempo de compilação do projeto, visto que as bibliotecas já estão compiladas a priori.
+
+No Carthage não há repositório centralizado para as biblioteca e isto significa que qualquer biblioteca que possa ser compilada em um arquivo framework suporta o Carthage __out of the box__.
+
+Para iniciar, siga a [instruções na documentação oficial](https://github.com/Carthage/Carthage#installing-carthage) do Carthage.
+
 ### Vendors
 ### Criando Libs
 ### Libs mais utilizadas

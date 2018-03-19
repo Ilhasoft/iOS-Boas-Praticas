@@ -278,9 +278,24 @@ Da mesma maneira, também é interessante que se acompanhe os erros que os usuá
 
 ## Building
 
-#### Configurações
+Esta seção contém um `overview` deste tópico - caso necessidade de mais informações, dê uma olhada nos seguintes links:
+
+- [iOS Developer Library: Xcode Concepts](https://developer.apple.com/library/content/featuredarticles/XcodeConcepts/Concept-Targets.html)
+- [Samantha Marshall: Managing Xcode](https://pewpewthespells.com/blog/managing_xcode.html)
+
+#### Configurações de Build
+
+Até aplicativos simples podem ser feito de formas diferentes. A separação mais básica que o Xcode nos provê é a separação entre builds de `debug` e `release`. Para o último, existem muitas otimizações que são executadas em tempo de compilação. A apple sugere que você utilize as configurações de `debug` para desenvolvimento e crie seus pacotes da App Store utilizando as configurações de `release`. Essa é a configuração padrão do Xcode, que executa a build `debug` quando o comando `Run` é executado e executa a build `release` quando o comando `Archive` é utilizado.
+
+Entretanto, isso é muito simples para aplicações no mundo real. Você pode (ou melhor, deve!) criar diferentes environments para `testing`, `staging` e outras atividades relacionadas ao seu serviço. Cada um deles deve ter sua própria URL base, log level, bundle identifier (assim você as pode instalar ao mesmo tempo), provisioning profile e etc.
+
 #### Targets
+
+Um target reside conceitualmente abaixo do nível do projeto, ou seja, um projeto pode ter vários targets que podem substituir as configurações do projeto. Por exemplo, cada alvo corresponde a "um aplicativo" no contexto de sua base de código. Por exemplo, você poderia ter aplicativos específicos de país (construídos a partir da mesma base de código) para App Store de diferentes países. Cada um deles precisará de builds para `development`, `staging` e `release`.
+
 #### Schemes
+
+Os Schemes dizem ao Xcode o que deve acontecer quando você clicar nas ações `Run`, `Test`, `Profile`, `Analyze` ou `Archive`. Basicamente ele mapeia quais ações devem ser executadas em quais target ou build configurations. Você também pode lançar argumentos, como o idioma em que o app deve ser executado ou configurar flags para diagnóstico ou debugging.
 
 ## Deployment
 

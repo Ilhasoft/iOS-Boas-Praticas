@@ -310,6 +310,17 @@ Sempre que você quiser rodar um aplicativo em um dispositivo físico, você pre
 
 #### Provisioning
 
+Além dos certificados, também existem os `Provisioning Profiles`, que são basicamente o link que faltava entre os dispositivos e certificados. Da mesma forma, existem dois tipos que distinguem entre proprósitos de desenvolvimento e distribuição:
+
+- __Development provisioning profile__: Contém uma lista com todos os dispositivos que estão autorizados a instalar e executar o app. Ele está conectado a um ou mais `development certificates`, um para cada desenvolvedor que estiver autorizado a utilizar o perfil.
+- __Distribution provisioning profile__: Existem três tipos de distribuição, um para cada caso de uso. Cada perfil de distribuição está atrelado a um certificado de distribuição e será inválidado quando o mesmo expirar.
+
+  - __Ad-hoc__: Assim como os perfis de desenvolvimento, ele contém uma lista com todos os dispositivos autorizados a instalar o app. Este tipo de profile pode ser utilizado para beta testings para até 100 usuários por ano.
+  - __App Store__: Este profile não tem lista de dispositivos autorizados, já que toda e qualquer pessoa pode instalar aplicativos a partir do canal oficial de distribuição de aplicativos da Apple.
+  - __Enterprise__: Assim como a AppStore, este perfil não tem lista de dispositivos autorizados. Desta forma, toda pessoa com acesso à "AppStore" da empresa pode instalar o app. Este perfil está somente disponível para contas empresariais.
+
+Para sincronizar todos os certificados e perfis da sua máquina, vá em Accounts nas Preferências do Xcode, adicione o seu Apple ID caso necessário e double-click no nome do seu time. Existe um botão de refresh no fundo da tela, você precisa reiniciar o Xcode para que as atualizações apareçam. 
+
 #### Uploading
 
 [iTunes Connect](https://itunesconnect.apple.com/login) é o portal da Apple para gerenciar seus apps na AppStore. Para fazer o upload de uma build, o Xcode pede o Apple ID do desenvoledor. Isto pode tornar as coisas um pouco obscuras quando você fizer parte de um grupo de desenvolvedores e deseja publicar seus apps. Isso acontece porque, por razões misteriosas, todo e qualquer Apple ID só pode estar ligado a uma única só conta no iTunes Connect.

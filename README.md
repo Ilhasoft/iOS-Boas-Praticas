@@ -128,14 +128,6 @@ Perceba:
 - A partir de agora você terá que utilizar o arquivo `.xcworkspace` ao invés de `.xcproject` ou seu projeto não compilará.
 - O comando `pod update` atualizará todos as dependências em suas últimas versões permitidas pelo `Podfile`. Você pode usar alguns [operadores](http://guides.cocoapods.org/syntax/podfile.html#pod) para especificar quais versões das bibliotecas seu projeto deverá utilizar.
 
-#### Carthage
-
-Vemos no [Carthage](https://github.com/Carthage/Carthage) a segunda melhor alternativa ao se adicionar bibliotecas de terceiros em seu projeto. Sua abordagem consiste em compilar as dependências em arquivos `framework` e não os adiciona "magicamente" ao projeto. Isto reduz significamente o tempo de compilação do projeto, visto que as bibliotecas já estão compiladas a priori.
-
-No Carthage não há repositório centralizado para as bibliotecas e isto significa que qualquer biblioteca que possa ser compilada em um arquivo `framework` suporta o Carthage __out of the box__.
-
-Para iniciar, siga a [instruções na documentação oficial](https://github.com/Carthage/Carthage#installing-carthage) do Carthage.
-
 #### Vendors
 
 Caso o componente que você deseja incluir no projeto não esteja disponível no `Cocoapods` e nem no `Carthage`, te aconselhamos a adicioná-lo ao código base do projeto em um diretório chamado `Vendors`.
@@ -162,6 +154,7 @@ Caso o componente que você deseja incluir no projeto não esteja disponível no
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [GrowingTextView](https://github.com/KennethTsang/GrowingTextView)
 - [CleanroomLogger](https://github.com/emaloney/CleanroomLogger)
+- [SnapKit](https://github.com/SnapKit/SnapKit)
 
 ## Coding Style
 
@@ -319,7 +312,7 @@ Além dos certificados, também existem os `Provisioning Profiles`, que são bas
   - __App Store__: Este profile não tem lista de dispositivos autorizados, já que toda e qualquer pessoa pode instalar aplicativos a partir do canal oficial de distribuição de aplicativos da Apple.
   - __Enterprise__: Assim como a AppStore, este perfil não tem lista de dispositivos autorizados. Desta forma, toda pessoa com acesso à "AppStore" da empresa pode instalar o app. Este perfil está somente disponível para contas empresariais.
 
-Para sincronizar todos os certificados e perfis da sua máquina, vá em Accounts nas Preferências do Xcode, adicione o seu Apple ID caso necessário e double-click no nome do seu time. Existe um botão de refresh no fundo da tela, você precisa reiniciar o Xcode para que as atualizações apareçam. 
+Para sincronizar todos os certificados e perfis da sua máquina, vá em Accounts nas Preferências do Xcode, adicione o seu Apple ID caso necessário e double-click no nome do seu time. Existe um botão de refresh no fundo da tela, você precisa reiniciar o Xcode para que as atualizações apareçam.
 
 #### Uploading
 

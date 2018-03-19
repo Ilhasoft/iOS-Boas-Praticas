@@ -11,18 +11,18 @@ Sabemos que pode ser difícil mergulhar de cabeça no mundo iOS. A estrada pode 
 Se estiver procurando por algo específico, pode ir diretamente à seção.
 
 1. [Getting Started](#getting-started)
-1. [Criando um novo projeto](#project-setup)
-1. [Criando um novo layout](#new-layout)  
+1. [Criando um novo projeto](#criando-um-novo-projeto)
+1. [Criando um novo layout](#criando-um-novo-layout)  
 1. [Dependency Management](#dependency-management)
 1. [Coding Style](#coding-style)
 1. [Stores](#stores)
-1. [Segurança](#security)
-1. [Diagnósticos](#diagnostics)
+1. [Segurança](#segurança)
+1. [Diagnósticos](#diagnósticos)
 1. [Analytics](#analytics)
 1. [Building](#building)
 1. [Deployment](#deployment)
 1. [In-App Purchases (IAP)](#in-app-purchases-iap)
-1. [Referência](#reference)
+1. [Referência](#referência)
 1. [License](#license)
 
 ## Getting Started
@@ -31,13 +31,13 @@ Se estiver procurando por algo específico, pode ir diretamente à seção.
 
 Utilizamos sempre a versão mais recente do Swift. Recomendamos uma boa lida na [documentação oficial](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309) para entender as particularidades da linguagem. Em alguns casos, algum conhecimento em Objective-C pode vir a ser útil.
 
+#### Human Interface Guidelines
+
+Se você não está acostumado ou vem de outra plataforma, tire um tempo para se familiarizar com o conteúdo das [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/). Estas guidelines possuem uma bom explanação dos componentes UI nativos e suas nomeclaturas, dimensões dos ícones etc.
+
 #### App Framework
 
 Recomendamos a utilização do [Apple Developer  Documentation](https://developer.apple.com/documentation/) sempre que necessário.
-
-#### Human Interface Guidelines
-
-Se você não está acostumado ou vem de outra plataforma, tire um tempo para se familiarizar com o conteúdo do [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/). As guidelines possuem um bom resumo com as nomeclaturas dos componentes de UI nativos, dimensões dos ícones etc.
 
 #### IDE
 
@@ -47,7 +47,7 @@ Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada
 
 #### Versão mínima do iOS
 
-É sempre útil que façamos uma avaliação prévia antes de escolher qual a versão mínima do iOS que vamos utilizar quando criarmos um novo aplicativo. Isso porque muitas vezes temos que prestar atenção em funcionalidades que surgem a cada versão e precisamos estar de olho. Regra geral: costumamos criar sempre projetos onde a versão mínima do iOS seja duas versões a menos que a atual.
+É sempre útil que façamos uma avaliação prévia antes de escolher qual a versão mínima do iOS que vamos utilizar ao criarmos um novo aplicativo. Isso porque muitas vezes temos que prestar atenção em funcionalidades que surgem a cada versão e precisamos estar de olho. Regra geral: costumamos criar sempre projetos onde a versão mínima do iOS seja duas versões a menos que a atual.
 
 Use essas ferramentas para colher informações para fazer a melhor escolha:
 
@@ -62,9 +62,9 @@ TO DO
 
 Mantenha todas as strings em arquivos de localization desde o início do projeto. Essa prática não é somente boa para traduções, mas torna mais fácil a busca por textos visíveis ao usuário.
 
-#### Constants
+#### Constantes
 
-Mantenha o escopo das constantes o menor possível. Por exemplo, caso você precise das constantes somente dentro de uma determinada classe, as constantes devem estar definidias dentro desta classe. Àquelas constantes cujos escopos devem ser globais devem ser mantidas em um só lugar. Em swift, você deve usar enums definidos em um arquivo chamado `Constants.swift` para agrupar, armazenar e acessar as constantes globais de uma maneira elegante:
+Mantenha o escopo das constantes o menor possível. Por exemplo, caso você precise das constantes somente dentro de uma determinada classe, as constantes devem estar definidias dentro desta classe. Àquelas constantes cujos escopos devem ser globais devem ser mantidas em um só lugar. Em `Swift`, você deve usar enums definidos em um arquivo chamado `Constants.swift` para agrupar, armazenar e acessar as constantes globais de uma maneira prática e elegante:
 
 ```swift
 
@@ -86,14 +86,14 @@ enum Color {
 
 #### Ignores
 
-Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` apropriado. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o `Github` nos proporciona arquivos `.gitignore` por default para tanto `swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
+Um bom passo a ser tomado quando colocamos um projeto em um controle de versão é usarmos um `.gitignore` apropriado. Desta forma, arquivos não desejados (user settings, arquivos temporários, etc) nunca poluirão o repositório. Por sorte, o Github nos proporciona arquivos `.gitignore` por default para tanto `Swift` quanto `Objective-C`. Caso deseje um `.gitignore` mais elaborado, indicamos a ferramenta [gitignore.io](https://www.gitignore.io/).
 
 ## Criando um novo layout
 
 ##### Por que criar layouts inteiramente via código?
 
 * Os storyboards são mais propensos a gerarem conflitos devido a estrutura complexa do seu XML. Isto faz com que os merges sejam mais difíceis do que se criássemos a view totalmente via código.
-* É mais fácil estruturar e reusar views que sejam feitas via código, mantendo assim o seu código DRY (Don't Repeat Yourself).
+* É mais fácil estruturar e reusar views que sejam feitas via código, mantendo assim o seu código `DRY (Don't Repeat Yourself)`.
 * Toda informação está em um só lugar. No Interface Builder você deve buscar em todos os inspectors afim de achar o que você estiver procurando.
 * Os storyboard introduzem uma certa acoplação entre seu código e a UI que pode levar a diversos erros. Por exemplo: quando um IBOutlet ou IBAction não é configurada corretamente. Estes erros não são detectados pelo compilador.
 
@@ -134,20 +134,20 @@ Perceba:
 
 #### Carthage
 
-Vemos no [Carthage](https://github.com/Carthage/Carthage) como a segunda melhor alternativa ao se adicionar bibliotecas de terceiros em seu projeto. Sua abordagem consiste em compilar as dependências em arquivos de framework e não os adiciona "magicamente" ao projeto. Isto reduz significamente o tempo de compilação do projeto, visto que as bibliotecas já estão compiladas a priori.
+Vemos no [Carthage](https://github.com/Carthage/Carthage) a segunda melhor alternativa ao se adicionar bibliotecas de terceiros em seu projeto. Sua abordagem consiste em compilar as dependências em arquivos `framework` e não os adiciona "magicamente" ao projeto. Isto reduz significamente o tempo de compilação do projeto, visto que as bibliotecas já estão compiladas a priori.
 
-No Carthage não há repositório centralizado para as biblioteca e isto significa que qualquer biblioteca que possa ser compilada em um arquivo framework suporta o Carthage __out of the box__.
+No Carthage não há repositório centralizado para as bibliotecas e isto significa que qualquer biblioteca que possa ser compilada em um arquivo `framework` suporta o Carthage __out of the box__.
 
 Para iniciar, siga a [instruções na documentação oficial](https://github.com/Carthage/Carthage#installing-carthage) do Carthage.
 
 #### Vendors
 
-Caso o componente de terceiro que você deseja incluir no projeto não esteja disponível no `Cocoapods` e nem no `Carthage`, te aconselhamos a adicioná-lo ao código base do projeto em um diretório chamado `Vendors`.
+Caso o componente que você deseja incluir no projeto não esteja disponível no `Cocoapods` e nem no `Carthage`, te aconselhamos a adicioná-lo ao código base do projeto em um diretório chamado `Vendors`.
 
 :warning: IMPORTANTE :warning:
 
-- Lembre de verificar a disponibilidade e adicionar (caso haja) a licensa de software aos componentes de terceiros presentes em seu projeto, dando os devidos créditos ao autor e incluindo uma `url` como fonte para fácil identificação.
-- Como não existirá um `Dependency Manager` vinculado ao componente, esteja atento, pois será responsabilidade da sua equipe manter esta parte de código. Aconselhamos a não incluir algo que não consigamos compreender.
+- Lembre de ler, avaliar e adicionar a licença de software (caso haja) aos arquivos do componente que estiverem presentes em seu projeto, dando os devidos créditos ao autor e incluindo uma `url` fonte para facilitar futuras buscas.
+- Como não existirá um `Dependency Manager` vinculado ao componente, fique atento! Será responsabilidade da sua equipe manter esta parte de código. Aconselhamos a não incluir algo que não consigamos compreender.
 - __SUGESTÃO__: Caso seja feita alguma mudança/melhoria ao código, lembre-se de compartilhá-la junto ao projeto de origem. Apreciamos a contribuição em projetos `open-source`.
 
 #### Libs mais utilizadas
@@ -165,17 +165,17 @@ Caso o componente de terceiro que você deseja incluir no projeto não esteja di
 - [KingFisher](https://github.com/onevcat/Kingfisher)
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [GrowingTextView](https://github.com/KennethTsang/GrowingTextView)
+- [CleanroomLogger](https://github.com/emaloney/CleanroomLogger)
 
 ## Coding Style
 
 #### Idioma
 
-Preferimos sempre utilizar o idioma __inglês__ em ao criarmos nossos projetos.
+Preferimos sempre utilizar o idioma __inglês__ ao criarmos nossos projetos.
 
 #### Lint
 
-Procuramos seguir sempre boas convenções de código. Para tanto, utilizamos o [SwiftLint](https://github.com/realm/SwiftLint) como ferramenta a nos auxiliar nesta missão. O `SwiftLint` age como um agente inspecionando o nosso código em busca de `bad smells` e nos alertando com warnings providenciais mostrando que algo não está tão legal assim.
-
+Procuramos seguir sempre boas convenções de código. Para tanto, utilizamos o [SwiftLint](https://github.com/realm/SwiftLint) como ferramenta a nos auxiliar nesta missão. O `SwiftLint` age como um agente inspecionando o nosso código em busca de `bad smells` e nos alertando que algo não está tão legal com warnings providenciais.
 
 Para instalar o `SwiftLint`, siga as instruções em sua [documentação](https://github.com/realm/SwiftLint#installation).
 
@@ -183,7 +183,7 @@ Recomendamos também uma boa lida nas [Code Conventions de Ray Wenderlich](https
 
 #### Documentação
 
-Pregamos o bom senso com relação a documentação de código. Procuramos prevenir a necessidade de documentações extensas ao criarmos códigos legíveis. Caso haja a necessidade de explicar alguma decisão tomada, fique à vontade. Pense sempre que seus amigos ficarão mais felizes por não precisarem perder tempo tentando entender o código que foi feito por você.
+Pregamos o bom senso com relação a documentação de código. Procuramos prevenir a necessidade de documentações extensas ao criarmos códigos legíveis. Entretanto, fique à vontade Caso haja a necessidade de explicar alguma decisão tomada. Pense sempre que seus amigos ficarão mais felizes por não precisarem perder tempo tentando entender o código que foi feito por você.
 
 Consideramos que o autores do [NSHipster](http://nshipster.com/swift-documentation/) fizeram um bom trabalho ao definir como formatar a documentação. Recomendamos uma lida no material deles sempre que necessário. :wink:
 
@@ -191,7 +191,7 @@ Consideramos que o autores do [NSHipster](http://nshipster.com/swift-documentati
 
 #### ReactiveCocoa
 
-Na camada mais baixa de todo aplicativo geralmente os modelos estão sendo mantidos de alguma maneira, seja em disco, em um banco de dados local ou em um servidor remoto. Esta camada também é útil para abstrair atividades relacionadas com a disposição de objetos do modelo, como o caching.
+Na camada mais baixa de todo aplicativo geralmente os modelos são mantidos de alguma maneira, seja em um banco de dados local ou em um servidor remoto. Esta camada também é útil para abstrair atividades relacionadas com a disposição de objetos do modelo.
 
 Geralmente quando desejamos lançar uma requisição ao backend ou deserializar um grande arquivo em disco, fazemos isto de maneira assíncrona. Sua API deve refletir este requisito, caso contrário a execução de seu app seria interrompida enquanto não houvesse resposta das requisições a API.
 
@@ -215,7 +215,7 @@ Mesmo em tempos onde confiamos nossos dados mais particulares aos nossos disposi
 
 #### Data Storage
 
-Caso seu aplicativo precise manter no dispositivo dados sensitivos, como nome de usuário e senha, auth token ou dados pessoais do usuário, você precisa mantê-los em um local que não possa ser acessado de fora do app. Nunca use `UserDefaults`, outros arquivos `plist` no disco ou `Core Data` para este fim porque estes não podem ser encriptados! Na maioria dos casos, o `iOS Keychain` será seu melhor amigo.
+Caso seu aplicativo precise manter no dispositivo dados sensitivos, como nome de usuário e senha, auth token ou dados pessoais do usuário, você precisa mantê-los em um local que não possa ser acessado de fora do app. Nunca use `UserDefaults`, outros arquivos `plist` no disco ou `Core Data` para este fim porque eles não podem ser encriptados! Na maioria dos casos, o `iOS Keychain` será seu melhor amigo.
 
 Enquanto estiver mantendo arquivos e/ou senhas, esteja seguro de determinar o nível de proteção correto (escolha-o conservadoramente). Se você precisa ter acesso enquanto o dispositivo estiver bloqueado, use `accessible after first unlock`. Em outros casos, você geralmente deve só liberar o acesso quando o dispositivo tenha sido desbloqueado.
 
@@ -227,7 +227,7 @@ Mantenha encriptado com TLS todo o tráfego HTTP do aplicativo ao servidor remot
 
 #### Logging
 
-Tome um cuidade extra ao configurar apropriadamente níveis de log antes de lançar seu app. Builds em produção não devem nunca dar log em senhas, tokens de API ou similares, porque são dados sensitivos e podem vazar ao público facilmente. Por outro lado, dar log no controle de fluxo pode ajudar a descobrir problemas que seus usuários estão experenciando.
+Tome um cuidado extra ao configurar apropriadamente níveis de log (dica: utilize a lib `CleanroomLogger`) antes de lançar seu app. Builds em produção não devem nunca dar log em senhas, tokens de API ou similares, porque são dados sensitivos e podem vazar ao público facilmente. Por outro lado, dar log no controle de fluxo pode ajudar a descobrir problemas que seus usuários estão experenciando.
 
 #### User Interface
 

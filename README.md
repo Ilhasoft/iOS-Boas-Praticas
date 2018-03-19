@@ -310,6 +310,12 @@ Sempre que você quiser rodar um aplicativo em um dispositivo físico, você pre
 
 #### Provisioning
 
+#### Uploading
+
+[iTunes Connect](https://itunesconnect.apple.com/login) é o portal da Apple para gerenciar seus apps na AppStore. Para fazer o upload de uma build, o Xcode pede o Apple ID do desenvoledor. Isto pode tornar as coisas um pouco obscuras quando você fizer parte de um grupo de desenvolvedores e deseja publicar seus apps. Isso acontece porque, por razões misteriosas, todo e qualquer Apple ID só pode estar ligado a uma única só conta no iTunes Connect.
+
+Depois de fazer o upload da build, seja paciente porque pode demorar mais ou menos uma hora até que seu app apareça na seção de builds da versão do seu app. Quando ele aparecer, você pode conectá-lo à versão do app e submetê-lo ao review.
+
 ## In-App Purchases (IAP)
 
 Quando validar recibos de compras dentro do aplicativo, lembre de garantir os seguintes itens:

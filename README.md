@@ -54,10 +54,6 @@ Use essas ferramentas para colher informações para fazer a melhor escolha:
 - [Apple’s world-wide iOS version penetration statistics](https://developer.apple.com/support/app-store/)
 - [DavidSmith: iOS Version Stats](https://david-smith.org/iosversionstats/)
 
-#### Estrutura do Projeto
-
-TO DO
-
 #### Localization
 
 Mantenha todas as strings em arquivos de localization desde o início do projeto. Essa prática não é somente boa para traduções, mas torna mais fácil a busca por textos visíveis ao usuário.
@@ -244,7 +240,23 @@ Habilite todos os warnings do compilador e os trate como se fossem erros - [vai 
 Para tratar warnings como erros em Swift, adicione `-warnings-as-errors` às configurações de compilação.
 
 #### Clang Static Analyzer
+
+O compilador CLang (utilizado pelo XCode) tem um analisador estático que analisa o fluxo de dados e de controle do seu código e detecta inúmeros erros que o compilador não é capaz.
+
+Você pode executar manualmente o analisador a partir do item de menu no XCode: _Product -> Analyze_.
+
+O analisador consegue trabalha em dois modos diferentes: `swallow` e `deep`. O modo `deep` é executado mais demoradamente que o modo `swallow` por conta de sua varredura profunda.
+
+Recomendações:
+
+- Habilite todos os checks do analisador.
+- Habilite o `Analize during 'Build'` na configuração de compilação de release para que o analisador seja executado automaticamente após a compilação de releases.
+- Configure o campo `Mode of Analysis for 'Analysis'` da configuração de compilação para `shallow`.
+- Configure o campo `Mode of Analysis for 'Build'` da configuração de compilação para `deep`.
+
 #### Faux Pas
+
+
 #### Debugging
 #### Profiling
 

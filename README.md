@@ -299,7 +299,15 @@ Os Schemes dizem ao Xcode o que deve acontecer quando você clicar nas ações `
 
 ## Deployment
 
+Fazer o deploy de um app na AppStore não é exatamente simples. Com isto em mente, aqui vão alguns conceitos centrais que, desde que estejam entendidos, te ajudarão bastante com isso.
+
 #### Signing
+
+Sempre que você quiser rodar um aplicativo em um dispositivo físico, você precisará assinar sua build com uma certificado gerado pela Apple. Cada certificado está atrelado à uma chave privada/pública, onde a parte privada está armazenada no `keychain` de seu mac. Existem dois tipos de certificados:
+
+- __Development certificate__: Cada desenvoledor do time tem o seu próprio certificado, que será gerado a partir de uma requisição. O Xcode pode resolver isso pra você, mas é melhor não apertar no botão `Fix issue` e entender o que realmente está acontecendo. Este certificado é necessário para instalar development builds em dispositivos.
+- __Distribution certificate__: Podem ser vários, mas é melhor que seja mantido um certificado por organização e que se compartilhe sua chave em um canal interno. Este certificado é necessário para que se possa fazer deploy à AppStore.
+
 #### Provisioning
 
 ## In-App Purchases (IAP)

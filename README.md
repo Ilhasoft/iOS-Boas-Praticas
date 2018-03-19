@@ -41,7 +41,7 @@ Recomendamos a utilização do [Apple Developer  Documentation](https://develope
 
 #### IDE
 
-Usamos o XCode como IDE para construir os aplicativos, pois é a IDE recomendada pela Apple e possui o melhor suporte a `Objective-C` e `Swift`.
+Usamos o Xcode como IDE para construir os aplicativos, pois é a IDE recomendada pela Apple e possui o melhor suporte a `Objective-C` e `Swift`.
 
 ## Criando um novo projeto
 
@@ -241,9 +241,9 @@ Para tratar warnings como erros em Swift, adicione `-warnings-as-errors` às con
 
 #### Clang Static Analyzer
 
-O compilador CLang (utilizado pelo XCode) tem um analisador estático que analisa o fluxo de dados e de controle do seu código e detecta inúmeros erros que o compilador não é capaz.
+O compilador CLang (utilizado pelo Xcode) tem um analisador estático que analisa o fluxo de dados e de controle do seu código e detecta inúmeros erros que o compilador não é capaz.
 
-Você pode executar manualmente o analisador a partir do item de menu no XCode: _Product -> Analyze_.
+Você pode executar manualmente o analisador a partir do item de menu no Xcode: _Product -> Analyze_.
 
 O analisador consegue trabalha em dois modos diferentes: `swallow` e `deep`. O modo `deep` é executado mais demoradamente que o modo `swallow` por conta de sua varredura profunda.
 
@@ -255,7 +255,12 @@ Recomendações:
 - Configure o campo `Mode of Analysis for 'Build'` da configuração de compilação para `deep`.
 
 #### Debugging
+
+Quando seu app falha o Xcode não abre o debugger por padrão. Para que isto aconteça, adicione um breakpoint de exceção (clique no "+" no fundo da Navigator de breakpoints do Xcode) para interromper a execução sempre que uma exceção for lançada. Isto irá capturar qualquer exceção, até mesmo as que já são tratadas.
+
 #### Profiling
+
+O Xcode vem com uma suite de análise de perfomance chamada `Instruments`. Ela contém uma infinidade de ferramenta para análise de uso de memória, cpu, rede, gráficos e muito mais. É de uma complexidade só! Mas um de seus casos mais simples é buscar `memory leaks` utilizando o instrumento `Allocations`: aperte o botão `Record` e filtre o sumário em alguma string útil, como o prefixo do nome das classes do seu app. A contagem da coluna `Persistence` te diz quantas instâncias de cada objeto você tem. Qualquer classe a que mostre o aumento indiscriminado na contagem indica `memory leaking`.  
 
 ## Analytics
 

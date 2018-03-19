@@ -254,9 +254,6 @@ Recomendações:
 - Configure o campo `Mode of Analysis for 'Analysis'` da configuração de compilação para `shallow`.
 - Configure o campo `Mode of Analysis for 'Build'` da configuração de compilação para `deep`.
 
-#### Faux Pas
-
-
 #### Debugging
 #### Profiling
 

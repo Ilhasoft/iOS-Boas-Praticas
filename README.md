@@ -264,7 +264,17 @@ O Xcode vem com uma suite de análise de perfomance chamada `Instruments`. Ela c
 
 ## Analytics
 
+Incluir algum framework de analytics em seu app é extremamente recomendado já que ele te permite ter insights sobre como as pessoas realmente o utilizam. Aquela feature realmente agrega valor? O botão X é ruim de clicar? Para responder essas perguntas, você pode enviar eventos, timings e outras informações mensuráveis para um serviço que as agrega e oferece uma visualização simples.
+
+Exemplos:
+
+- [Google Tag Manager](https://www.google.com/analytics/tag-manager/)
+- [Google Analytics](https://www.google.com/analytics/)
+- [Firebase Analytics](https://firebase.google.com/docs/analytics/?hl=pt-br)
+
 #### Crashlytics
+
+Da mesma maneira, também é interessante que se acompanhe os erros que os usuários do seu app podem estar experimentando. Para tanto, é recomendado o uso de alguma ferramenta de rastreio de erros como o [Crashlytics by Fabric](https://get.fabric.io/).
 
 ## Building
 

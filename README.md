@@ -238,6 +238,11 @@ Quando isto acontecer, é uma boa prática limpar o `Pastboard` para evitar que 
 ## Diagnósticos
 
 #### Warnings do Compilador
+
+Habilite todos os warnings do compilador e os trate como se fossem erros - [vai valer a pena](https://speakerdeck.com/hasseg/the-compiler-is-your-friend).
+
+Para tratar warnings como erros em Swift, adicione `-warnings-as-errors` às configurações de compilação.
+
 #### Clang Static Analyzer
 #### Faux Pas
 #### Debugging
